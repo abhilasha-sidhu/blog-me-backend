@@ -28,6 +28,10 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/public', publicRoutes);
 
+app.use('/_health', async (req, res) => {
+  res.send('OK');
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
